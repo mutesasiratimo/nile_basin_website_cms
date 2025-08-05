@@ -150,25 +150,40 @@ class Data {
 
   static List<NimBusCardData> nimbusCardData = [
     NimBusCardData(
-      title: StringConst.UI_UX,
-      subtitle: StringConst.UI_UX_DESC,
+      title: StringConst.FAITH,
+      subtitle: StringConst.FAITH_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
     ),
     NimBusCardData(
-      title: StringConst.PHOTOGRAPHER,
-      subtitle: StringConst.PHOTOGRAPHER_DESC,
+      title: StringConst.CREATIVITY,
+      subtitle: StringConst.CREATIVITY_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
-      circleBgColor: AppColors.green100,
     ),
     NimBusCardData(
-      title: StringConst.FREELANCER,
-      subtitle: StringConst.FREELANCER_DESC,
+      title: StringConst.INNOVATION,
+      subtitle: StringConst.INNOVATION_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
-      leadingIconColor: AppColors.black,
-      circleBgColor: AppColors.grey50,
+    ),
+    NimBusCardData(
+      title: StringConst.TECHNOLOGY,
+      subtitle: StringConst.TECHNOLOGY_DESC,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
+    ),
+    NimBusCardData(
+      title: StringConst.NATURE,
+      subtitle: StringConst.NATURE_DESC,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
+    ),
+    NimBusCardData(
+      title: StringConst.LEADERSHIP,
+      subtitle: StringConst.LEADERSHIP_DESC,
+      leadingIcon: Icons.done,
+      trailingIcon: Icons.chevron_right,
     ),
   ];
 

@@ -144,7 +144,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headlineMedium?.copyWith(
+                                    textStyle:
+                                        textTheme.headlineMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                     ),
@@ -163,7 +164,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headlineMedium?.copyWith(
+                                    textStyle:
+                                        textTheme.headlineMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.secondaryColor,
                                       height: 1.2,
@@ -216,11 +218,10 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                   horizontal: sidePadding,
                 ),
                 child: Column(
-                  children: buildCardRow(
+                  children: buildCardGrid(
                     context: context,
                     data: Data.nimbusCardData,
                     width: contentAreaWidth,
-                    isHorizontal: false,
                     hasAnimation: false,
                   ),
                 ),

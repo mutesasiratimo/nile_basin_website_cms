@@ -175,6 +175,105 @@ List<Widget> buildCardRow({
   return items;
 }
 
+List<Widget> buildCardGrid({
+  required BuildContext context,
+  required List<NimBusCardData> data,
+  required double width,
+  bool hasAnimation = true,
+  double crossAxisSpacing = 24.0,
+  double mainAxisSpacing = 24.0,
+}) {
+  TextTheme textTheme = Theme.of(context).textTheme;
+
+  double cardWidth = responsiveSize(
+    context,
+    Sizes.WIDTH_32,
+    Sizes.WIDTH_40,
+    md: Sizes.WIDTH_36,
+  );
+  double iconSize = responsiveSize(
+    context,
+    Sizes.ICON_SIZE_18,
+    Sizes.ICON_SIZE_24,
+  );
+  double trailingIconSize = responsiveSize(
+    context,
+    Sizes.ICON_SIZE_28,
+    Sizes.ICON_SIZE_30,
+    md: Sizes.ICON_SIZE_30,
+  );
+
+  return [
+    GridView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: crossAxisSpacing,
+        mainAxisSpacing: mainAxisSpacing,
+        childAspectRatio: 1.5, // Adjust this ratio to control card height
+      ),
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        return NimBusCard(
+          width: 200, // Let the grid control the width
+          height: responsiveSize(
+            context,
+            125,
+            140,
+          ),
+          hasAnimation: hasAnimation,
+          leading: CircularContainer(
+            width: cardWidth,
+            height: cardWidth,
+            iconSize: iconSize,
+            backgroundColor: data[index].circleBgColor,
+            iconColor: data[index].leadingIconColor,
+          ),
+          title: Flexible(
+            child: SelectableText(
+              data[index].title,
+              style: textTheme.labelMedium?.copyWith(
+                fontSize: responsiveSize(
+                  context,
+                  Sizes.TEXT_SIZE_16,
+                  Sizes.TEXT_SIZE_18,
+                ),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          subtitle: Container(
+            width: 200,
+            child: Row(
+              children: [
+                Expanded(
+                  child: SelectableText(
+                    data[index].subtitle,
+                    style: textTheme.bodyLarge?.copyWith(
+                      fontSize: responsiveSize(
+                        context,
+                        Sizes.TEXT_SIZE_14,
+                        Sizes.TEXT_SIZE_16,
+                      ),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          trailing: Icon(
+            Icons.chevron_right,
+            size: trailingIconSize,
+            color: data[index].trailingIconColor,
+          ),
+        );
+      },
+    ),
+  ];
+}
+
 double computeHeight(double offset, double sizeOfGlobe, double sizeOfBlob) {
   double sum = (offset + sizeOfGlobe) - sizeOfBlob;
   if (sum < 0) {

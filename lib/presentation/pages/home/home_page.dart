@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage>
   final List<NavItemData> navItems = [
     NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
     NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
-    NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
-    NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
-    NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
+    NavItemData(name: StringConst.CIRRICULUM, key: GlobalKey()),
+    NavItemData(name: StringConst.GALLERY, key: GlobalKey()),
+    NavItemData(name: StringConst.PARTNERS, key: GlobalKey()),
     NavItemData(name: StringConst.BLOG, key: GlobalKey()),
   ];
 

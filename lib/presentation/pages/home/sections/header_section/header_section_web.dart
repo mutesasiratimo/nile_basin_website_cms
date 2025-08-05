@@ -166,7 +166,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headlineMedium?.copyWith(
+                                    textStyle:
+                                        textTheme.headlineMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                     ),
@@ -185,7 +186,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headlineMedium?.copyWith(
+                                    textStyle:
+                                        textTheme.headlineMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.secondaryColor,
                                       height: 1.2,
@@ -241,11 +243,10 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                         margin: EdgeInsets.only(right: (sizeOfBlobSm * 0.35)),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: buildCardRow(
+                          children: buildCardGrid(
                             context: context,
                             data: Data.nimbusCardData,
                             width: contentAreaWidth,
-                            isHorizontal: false,
                             hasAnimation: false,
                           ),
                         ),
@@ -272,18 +273,12 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                     } else {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              ...buildCardRow(
-                                context: context,
-                                data: Data.nimbusCardData,
-                                width: contentAreaWidth / 3.8,
-                              ),
-                              Spacer(),
-                            ],
-                          ),
-                        ],
+                        children: buildCardGrid(
+                          context: context,
+                          data: Data.nimbusCardData,
+                          width: contentAreaWidth,
+                          hasAnimation: true,
+                        ),
                       );
                     }
                   },

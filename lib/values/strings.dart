@@ -9,10 +9,10 @@ class StringConst {
   static const String HOME = "Home";
   static const String SERVICES = "Services";
   static const String ABOUT = "About";
-  static const String PROJECTS = "Projects";
-  static const String AWARDS = "Awards";
+  static const String GALLERY = "Gallery";
+  static const String PARTNERS = "Partners";
   static const String BLOG = "Blog";
-  static const String SKILLS = "Skills";
+  static const String CIRRICULUM = "Curriculum";
   static const String CONTACT = "Contacts";
 
   static const String CONTACT_ME = "Contact Us";
@@ -23,8 +23,7 @@ class StringConst {
   static const String FIRST_NAME = "Welcome";
   static const String INTRO = "Nile Basin Int'l School";
   static const String POSITION = "A world of possibilities.";
-  static const String ABOUT_DEV =
-      "Get your child enrolled free of charge.";
+  static const String ABOUT_DEV = "Get your child enrolled free of charge.";
   static const String ABOUT_ME_1 =
       "Product Designer and Digital Creative Director working in design field for";
   static const String ABOUT_ME_2 =
@@ -41,6 +40,28 @@ class StringConst {
   static const String PHOTOGRAPHER_DESC = "Awesome photo & video";
   static const String FREELANCER = "Freelancer";
   static const String FREELANCER_DESC = "You can hire me now";
+// CORE VALUES STRINGS
+  static const String FAITH = "Faith";
+  static const String FAITH_DESC =
+      "We believe in nurturing faith as a foundation for moral strength, purpose, and integrity in every learner's life.";
+  static const String CREATIVITY = "Creativity";
+  static const String CREATIVITY_DESC =
+      "Creativity fuels original thinking and expression, empowering learners to solve problems with imagination and flair.";
+  static const String INNOVATION = "Innovation";
+  static const String INNOVATION_DESC =
+      "Our programs cultivate innovation by encouraging students to explore, question, and reimagine the world around them.";
+  static const String TECHNOLOGY = "Technology";
+  static const String TECHNOLOGY_DESC =
+      "We embrace technology as a transformative tool that enhances education and prepares students for a digital future.";
+  static const String RESPECT = "Respect";
+  static const String RESPECT_DESC =
+      "We believe in nurturing respect as a foundation for moral strength, purpose, and integrity in every learner's life.";
+  static const String NATURE = "Nature";
+  static const String NATURE_DESC =
+      "Nature teaches us harmony and sustainability. We inspire students to appreciate and protect the environment.";
+  static const String LEADERSHIP = "Leadership";
+  static const String LEADERSHIP_DESC =
+      "Leadership is built through character and service. We develop confident, compassionate leaders for tomorrow.";
 
   static const String PYTHON = "Python";
   static const String JAVA = "Java";
