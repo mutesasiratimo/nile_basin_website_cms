@@ -2,9 +2,7 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
@@ -15,16 +13,19 @@ List<FooterItem> footerItems = [
     title: StringConst.PHONE_ME + ":",
     subtitle: StringConst.PHONE_NUMBER,
     iconData: FeatherIcons.phone,
+    onTap: () => openPhoneDialer(StringConst.PHONE_NUMBER),
   ),
   FooterItem(
     title: StringConst.MAIL_ME + ":",
     subtitle: StringConst.DEV_EMAIL_2,
     iconData: FontAwesomeIcons.paperPlane,
+    onTap: () => openEmailClient(StringConst.DEV_EMAIL_2),
   ),
   FooterItem(
     title: StringConst.FOLLOW_ME_2 + ":",
-    subtitle: StringConst.BEHANCE_ID,
-    iconData: FontAwesomeIcons.behance,
+    subtitle: StringConst.NAVIGATE,
+    iconData: FontAwesomeIcons.mapLocation,
+    onTap: () => openMapsNavigation(),
   ),
 ];
 
@@ -38,7 +39,7 @@ class _FooterSectionState extends State<FooterSection> {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? footerTextStyle = textTheme.labelSmall?.copyWith(
+    TextStyle? footerTextStyle = textTheme.bodySmall?.copyWith(
       color: AppColors.primaryText2,
       fontWeight: FontWeight.bold,
     );
@@ -76,13 +77,24 @@ class _FooterSectionState extends State<FooterSection> {
           ),
           SpaceH20(),
           InkWell(
-            onTap: () => openUrlLink(StringConst.WEB_GENIUS_LAB_URL),
+            onTap: () => openUrlLink(""),
             child: RichText(
               text: TextSpan(
                 text: StringConst.RIGHTS_RESERVED + " ",
                 style: footerTextStyle,
+                children: [],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SpaceH4(),
+          InkWell(
+            onTap: () => openUrlLink(""),
+            child: RichText(
+              text: TextSpan(
+                text: StringConst.DESIGNED_BY + " ",
+                style: footerTextStyle,
                 children: [
-                  TextSpan(text: StringConst.DESIGNED_BY + " "),
                   TextSpan(
                     text: StringConst.WEB_GENIUS_LAB,
                     style: footerTextStyle?.copyWith(
@@ -96,34 +108,13 @@ class _FooterSectionState extends State<FooterSection> {
               textAlign: TextAlign.center,
             ),
           ),
-          // NimBusLink(
-          //   url: StringConst.WEB_GENIUS_LAB_URL,
-          //   child: RichText(
-          //     text: TextSpan(
-          //       text: StringConst.RIGHTS_RESERVED + " ",
-          //       style: footerTextStyle,
-          //       children: [
-          //         TextSpan(text: StringConst.DESIGNED_BY + " "),
-          //         TextSpan(
-          //           text: StringConst.WEB_GENIUS_LAB,
-          //           style: footerTextStyle?.copyWith(
-          //             decoration: TextDecoration.underline,
-          //             fontWeight: FontWeight.w900,
-          //             color: AppColors.black,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
           SpaceH4(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: Center(
-                  child:InkWell(
+                  child: InkWell(
                     onTap: () => openUrlLink(StringConst.DAVID_LEGEND_URL),
                     child: RichText(
                       text: TextSpan(
@@ -142,51 +133,7 @@ class _FooterSectionState extends State<FooterSection> {
                       ),
                     ),
                   ),
-                  //  NimBusLink(
-                  //   url: StringConst.DAVID_LEGEND_URL,
-                  //   child: RichText(
-                  //     text: TextSpan(
-                  //       text: StringConst.BUILT_BY + " ",
-                  //       style: footerTextStyle,
-                  //       children: [
-                  //         TextSpan(
-                  //           text: StringConst.DAVID_COBBINA + ". ",
-                  //           style: footerTextStyle?.copyWith(
-                  //             decoration: TextDecoration.underline,
-                  //             fontWeight: FontWeight.w900,
-                  //             color: AppColors.black,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                 ),
-              ),
-            ],
-          ),
-          SpaceH4(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-              SpaceW4(),
-              ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(20)),
-                child: Image.asset(
-                  ImagePath.GHANA_FLAG,
-                  width: Sizes.WIDTH_16,
-                  height: Sizes.HEIGHT_16,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SpaceW4(),
-              Text(StringConst.WITH_LOVE, style: footerTextStyle),
-              SpaceW4(),
-              Icon(
-                FontAwesomeIcons.solidHeart,
-                color: AppColors.red,
-                size: Sizes.ICON_SIZE_12,
               ),
             ],
           ),
@@ -206,6 +153,7 @@ class _FooterSectionState extends State<FooterSection> {
           title: data[index].title,
           subtitle: data[index].subtitle,
           iconData: data[index].iconData,
+          onTap: data[index].onTap,
         ),
       );
       if (index < data.length - 1) {
@@ -268,10 +216,39 @@ class _FooterSectionState extends State<FooterSection> {
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
-                  NimbusButton(
-                    buttonTitle: StringConst.HIRE_ME,
-                    buttonColor: AppColors.primaryColor,
-                    onPressed: () {},
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryColor,
+                      borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
+                    ),
+                    child: InkWell(
+                      onTap: () => openWhatsApp(StringConst.PHONE_NUMBER),
+                      borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Sizes.PADDING_24,
+                          vertical: Sizes.PADDING_16,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.whatsapp,
+                              color: AppColors.white,
+                              size: Sizes.ICON_SIZE_24,
+                            ),
+                            SpaceW12(),
+                            Text(
+                              "WhatsApp Us",
+                              style: textTheme.labelLarge?.copyWith(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                   SpaceH80(),
                 ],
@@ -326,7 +303,8 @@ class _FooterSectionState extends State<FooterSection> {
                 Spacer(flex: 2),
                 Text(
                   StringConst.LETS_TALK,
-                  style: textTheme.headlineSmall?.copyWith(color: AppColors.white),
+                  style:
+                      textTheme.headlineSmall?.copyWith(color: AppColors.white),
                 ),
                 Spacer(),
                 Row(
@@ -338,10 +316,39 @@ class _FooterSectionState extends State<FooterSection> {
                   ],
                 ),
                 Spacer(),
-                NimBusButtonLink(
-                  url: StringConst.EMAIL_URL,
-                  buttonTitle: StringConst.HIRE_ME,
-                  buttonColor: AppColors.primaryColor,
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryColor,
+                    borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
+                  ),
+                  child: InkWell(
+                    onTap: () => openWhatsApp(StringConst.PHONE_NUMBER),
+                    borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Sizes.PADDING_24,
+                        vertical: Sizes.PADDING_16,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            FontAwesomeIcons.whatsapp,
+                            color: AppColors.white,
+                            size: Sizes.ICON_SIZE_24,
+                          ),
+                          SpaceW12(),
+                          Text(
+                            "WhatsApp Us",
+                            style: textTheme.labelSmall?.copyWith(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
                 Spacer(flex: 2),
               ],
@@ -358,16 +365,18 @@ class FooterItem extends StatelessWidget {
     required this.iconData,
     required this.title,
     required this.subtitle,
+    this.onTap,
   });
 
   final String title;
   final String subtitle;
   final IconData iconData;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    return Column(
+    Widget content = Column(
       children: [
         Icon(
           iconData,
@@ -390,5 +399,13 @@ class FooterItem extends StatelessWidget {
         ),
       ],
     );
+
+    if (onTap != null) {
+      return InkWell(
+        onTap: onTap,
+        child: content,
+      );
+    }
+    return content;
   }
 }

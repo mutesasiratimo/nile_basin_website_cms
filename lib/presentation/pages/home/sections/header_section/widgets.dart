@@ -1,3 +1,4 @@
+import 'package:blobs/blobs.dart';
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/nimbus_link.dart';
@@ -49,6 +50,15 @@ class _HeaderImageState extends State<HeaderImage> {
             ),
           ),
         ),
+        // Blob.random(
+        //   size: MediaQuery.of(context).size.width * 0.7,
+        //   edgesCount: 8,
+        //   styles: BlobStyles(
+        //     color: AppColors.secondaryColor,
+        //     fillType: BlobFillType.fill,
+        //     strokeWidth: 3,
+        //   ),
+        // ),
         Image.asset(
           ImagePath.DEV_HEADER,
           width: widget.imageWidth,
@@ -263,11 +273,7 @@ List<Widget> buildCardGrid({
               ],
             ),
           ),
-          trailing: Icon(
-            Icons.chevron_right,
-            size: trailingIconSize,
-            color: data[index].trailingIconColor,
-          ),
+          trailing: Spacer(),
         );
       },
     ),

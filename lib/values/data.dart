@@ -27,7 +27,7 @@ class Data {
     SocialButton2Data(
       title: StringConst.BEHANCE,
       iconData: FontAwesomeIcons.behance,
-      url: StringConst.BEHANCE_URL,
+      url: StringConst.YOUTUBE_URL,
       titleColor: AppColors.blue300,
       buttonColor: AppColors.blue300,
       iconColor: AppColors.white,
@@ -96,10 +96,10 @@ class Data {
         iconData: Icons.pages_outlined), //not being used
   ];
   static List<StatItemData> statItemsData = [
-    StatItemData(value: 120, subtitle: StringConst.HAPPY_CLIENTS),
-    StatItemData(value: 10, subtitle: StringConst.YEARS_OF_EXPERIENCE),
-    StatItemData(value: 230, subtitle: StringConst.INCREDIBLE_PROJECTS),
-    StatItemData(value: 18, subtitle: StringConst.AWARD_WINNING),
+    StatItemData(value: 5, subtitle: StringConst.HAPPY_CLIENTS),
+    StatItemData(value: 50, subtitle: StringConst.YEARS_OF_EXPERIENCE),
+    StatItemData(value: 20, subtitle: StringConst.INCREDIBLE_PROJECTS),
+    StatItemData(value: 12, subtitle: StringConst.AWARD_WINNING),
   ];
 
   static List<ProjectCategoryData> projectCategories = [
@@ -128,14 +128,14 @@ class Data {
     BlogCardData(
       category: StringConst.BLOG_CATEGORY_1,
       title: StringConst.BLOG_TITLE_1,
-      date: StringConst.BLOG_DATE,
+      date: StringConst.BLOG_DATE_3,
       buttonText: StringConst.READ_MORE,
       imageUrl: ImagePath.BLOG_01,
     ),
     BlogCardData(
       category: StringConst.BLOG_CATEGORY_2,
       title: StringConst.BLOG_TITLE_2,
-      date: StringConst.BLOG_DATE,
+      date: StringConst.BLOG_DATE_2,
       buttonText: StringConst.READ_MORE,
       imageUrl: ImagePath.BLOG_02,
     ),
@@ -154,36 +154,42 @@ class Data {
       subtitle: StringConst.FAITH_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.primaryColor,
     ),
     NimBusCardData(
       title: StringConst.CREATIVITY,
       subtitle: StringConst.CREATIVITY_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.secondaryColor,
     ),
     NimBusCardData(
       title: StringConst.INNOVATION,
       subtitle: StringConst.INNOVATION_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.primaryColor,
     ),
     NimBusCardData(
       title: StringConst.TECHNOLOGY,
       subtitle: StringConst.TECHNOLOGY_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.secondaryColor,
     ),
     NimBusCardData(
       title: StringConst.NATURE,
       subtitle: StringConst.NATURE_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.primaryColor,
     ),
     NimBusCardData(
       title: StringConst.LEADERSHIP,
       subtitle: StringConst.LEADERSHIP_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.secondaryColor,
     ),
   ];
 

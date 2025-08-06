@@ -29,14 +29,16 @@ class StringConst {
   static const String ABOUT_ME_2 =
       "13 years so far, specialized in UI/UX, Branding and digital designs.";
   static const String DOWNLOAD_CV = "Enrol Now";
+  static const String DOWNLOAD_BROCHURE = "Download Brochure";
   static const String EMAIL = "Email";
-  static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String DEV_EMAIL_2 = "info@nbis.ac.ug";
+  static const String NAVIGATE = "Tap to Navigate";
   static const String BEHANCE = "Behance";
   static const String BEHANCE_ID = "behance.net/nimbus200";
   static const String HIRE_ME_NOW = "Hire Me Now";
   static const String UI_UX = "UI/UX Designer";
   static const String UI_UX_DESC = "creative websites for you";
-  static const String PHOTOGRAPHER = "Photographer";
+  static const String PHOTOGRAPHER = "Performing Arts";
   static const String PHOTOGRAPHER_DESC = "Awesome photo & video";
   static const String FREELANCER = "Freelancer";
   static const String FREELANCER_DESC = "You can hire me now";
@@ -58,7 +60,7 @@ class StringConst {
       "We believe in nurturing respect as a foundation for moral strength, purpose, and integrity in every learner's life.";
   static const String NATURE = "Nature";
   static const String NATURE_DESC =
-      "Nature teaches us harmony and sustainability. We inspire students to appreciate and protect the environment.";
+      "Nature teaches us harmony & sustainability. We inspire students to appreciate & protect the environment.";
   static const String LEADERSHIP = "Leadership";
   static const String LEADERSHIP_DESC =
       "Leadership is built through character and service. We develop confident, compassionate leaders for tomorrow.";
@@ -73,9 +75,9 @@ class StringConst {
   //AboutMe Section
   static const String HI = "Hi";
   static const String THERE = "There!";
-  static const String ABOUT_ME = "about me";
+  static const String ABOUT_ME = "about us";
   static const String ABOUT_ME_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful. beautifully, too.";
+      "Nile Basin ACE International School trading as Nile Basin International School is a dynamic Christian learning community-based institution in Kampala, Uganda. \nWe are passionate about nurturing emotionally intelligent, socially aware and intellectually curious learners, who can thrive in a fast-changing world.";
   static const String ABOUT_ME_DESC_1 =
       "Product Designer and Digital Creative Director working in design ";
   static const String ABOUT_ME_DESC_2 =
@@ -86,58 +88,58 @@ class StringConst {
       "story we tell, every brand we build, and every interaction we";
   static const String ABOUT_ME_DESC_5 =
       "create must not only look beautiful. beautifully, too.";
-  static const String CREATIVE_DESIGN = "Need Creative Design?";
-  static const String HELP = "I can Help You!";
+  static const String CREATIVE_DESIGN = "Who";
+  static const String HELP = "Are We?";
   static const String FOLLOW_ME_1 = "You can also follow me here:";
   static const String DRIBBLE = "Dribble";
   static const String INSTA = "Insta";
 
   //Skills Section
-  static const String MY_SKILLS = "my skills";
-  static const String SKILLS_TITLE_1 = "What My Design";
-  static const String SKILLS_TITLE_2 = "Skills Include";
+  static const String MY_SKILLS = "ACE cirriculum";
+  static const String SKILLS_TITLE_1 = "ACE";
+  static const String SKILLS_TITLE_2 = "Cirriculum";
   static const String SKILLS_DESC =
-      "These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful.";
+      "Accelerated Christian Education (ACE) is a Biblically-based learning system that equips children to grow academically, spiritually and morally. Unlike tradtional classrooms, ACE offers and individualised learning approach in which each learner progresses at their own pace, through structured workbooks called PACEs - Packets of Accelerated Christian Education. \nAt the heart of ACE is the goal to build both academic excellence and Godly character, with a focus on self-discipline, mastery and personal accountability, students not only gain knowledge but also grow in faith and values";
   static const String TOOLS_1_NAME = "Photoshop";
   static const String TOOLS_1_PROFICIENCY = "80%";
   static const String TOOLS_2_NAME = "Illustrator";
   static const String TOOLS_2_PROFICIENCY = "90%";
   static const String TOOLS_3_NAME = "Sketch";
   static const String TOOLS_3_PROFICIENCY = "70%";
-  static const String SKILLS_1 = "UI/UX Design";
+  static const String SKILLS_1 = "Individualised Learning";
   static const String SKILLS_1_DESC =
       "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_2 = "Graphic Design";
+  static const String SKILLS_2 = "Diagnostic Learning";
   static const String SKILLS_2_DESC =
       "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_3 = "Motion Design";
+  static const String SKILLS_3 = "PACEs System";
   static const String SKILLS_3_DESC =
       "We believe direct collaboration with our clients is essential to bringing unique";
-  static const String SKILLS_4 = "Photo Retouch";
+  static const String SKILLS_4 = "Self Instructional & Supervised";
   static const String SKILLS_4_DESC =
       "We believe direct collaboration with our clients is essential to bringing unique";
 
   //Stats Section
-  static const String HAPPY_CLIENTS = "Happy Clients";
-  static const String HAPPY_CLIENTS_NUM = "120";
-  static const String YEARS_OF_EXPERIENCE = "Years of Experience";
-  static const String YEARS_OF_EXPERIENCE_NUM = "10";
-  static const String INCREDIBLE_PROJECTS = "Incredible Projects";
-  static const String INCREDIBLE_PROJECTS_NUM = "230";
-  static const String AWARD_WINNING = "Award Winning";
-  static const String AWARD_WINNING_NUM = "18";
+  static const String HAPPY_CLIENTS = "Years in Existence";
+  static const String HAPPY_CLIENTS_NUM = "5";
+  static const String YEARS_OF_EXPERIENCE = "Happy Learners";
+  static const String YEARS_OF_EXPERIENCE_NUM = "50";
+  static const String INCREDIBLE_PROJECTS = "Proud Alumni";
+  static const String INCREDIBLE_PROJECTS_NUM = "24";
+  static const String AWARD_WINNING = "Learning Grades";
+  static const String AWARD_WINNING_NUM = "12";
 
   //Projects Section
-  static const String MEET_MY_PROJECTS = "Meet My Projects";
-  static const String MY_WORKS = "my works";
+  static const String MEET_MY_PROJECTS = "Share our Memories";
+  static const String MY_WORKS = "our gallery";
   static const String PROJECTS_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do.";
-  static const String ALL_PROJECTS = "All Projects";
+      "No memorable moment is complete without a picture. Here are some of the moments we have shared together.\nMissed an event? Look through our gallery to get caught up.";
+  static const String ALL_PROJECTS = "View Gallery";
   static const String ALL = "All";
-  static const String BRANDING = "Branding";
-  static const String PACKAGING = "Packaging";
-  static const String PHOTOGRAPHY = "Photography";
-  static const String WEB_DESIGN = "Web Design";
+  static const String BRANDING = "Educational";
+  static const String PACKAGING = "Recreation";
+  static const String PHOTOGRAPHY = "Performing Arts";
+  static const String WEB_DESIGN = "Sports";
   static const String PORTFOLIO_1_TITLE = "Urban Experience";
   static const String PORTFOLIO_2_TITLE = "Graphic Design";
   static const String PORTFOLIO_3_TITLE = "Launch Product";
@@ -146,12 +148,12 @@ class StringConst {
   static const String PORTFOLIO_6_TITLE = "Company Branding";
 
   //Awards & Section
-  static const String MY = "My";
-  static const String CV = "CV";
-  static const String MY_AWARDS = "my awards";
-  static const String AWARDS_TITLE = "Honours & Awards";
+  static const String MY = "";
+  static const String CV = "";
+  static const String MY_AWARDS = "our partners";
+  static const String AWARDS_TITLE = "Partners & Sponsors";
   static const String AWARDS_DESC =
-      "Since 2015 I have been a visionary and a reliable software engineering partner for world-class brands.";
+      "Nile Basin International School works in tandem with individuals and organisations to stand out as a pillar of our community and provide the holistic education as we know and love it.\nBut most importantly, each and every one of YOU is our partner.";
   static const String AWARDS_TYPE_TITLE_1 = "In Press";
   static const String AWARDS_TYPE_TITLE_2 = "Awards";
   static const String AWARDS_1 = "Forbes";
@@ -182,47 +184,57 @@ class StringConst {
       "What a fantastic day it's been at Max Nimbus! Huge shoutout to the team for connecting us all and making this amazing event possible. She bring fresh ideas and challenges to the way our industry typically markets products. This year I brought friends. Come say hi! Development is one of our values & a theme of Max Nimbus talks.";
 
   //Blog Section
-  static const String MY_BLOG = "my blog";
-  static const String BLOG_SECTION_TITLE_1 = "Read My Own";
-  static const String BLOG_SECTION_TITLE_2 = "Blog. Be Trendy";
+  static const String MY_BLOG = "our blog";
+  static const String BLOG_SECTION_TITLE_1 = "Our";
+  static const String BLOG_SECTION_TITLE_2 = "Blog.";
   static const String BLOG_DESC =
-      "We met years ago at an advertising agency where we learned a ton of dos and some don'ts. There were project deadlines, happy hours, client proposals and a few sparks flying.";
+      "Keep up to date with the latest news and events at Nile Basin International School.";
   static const String BLOG_VIEW_ALL = "View All";
-  static const String BLOG_CATEGORY_1 = "inspiration";
-  static const String BLOG_CATEGORY_2 = "design";
-  static const String BLOG_CATEGORY_3 = "creative";
-  static const String BLOG_DATE = "February 4, 2020";
-  static const String BLOG_TITLE_1 = "How Much Does a Website Cost to Build?";
-  static const String BLOG_TITLE_2 = "10 Tips How Create Best Packaging Design";
-  static const String BLOG_TITLE_3 = "How Get Your Visitors Love Your Brand";
+  static const String BLOG_CATEGORY_1 = "recreation";
+  static const String BLOG_CATEGORY_2 = "educational";
+  static const String BLOG_CATEGORY_3 = "recreation";
+  static const String BLOG_DATE = "17 April, 2025";
+  static const String BLOG_DATE_2 = "27 July, 2025";
+  static const String BLOG_DATE_3 = "4 August, 2025";
+  static const String BLOG_TITLE_1 =
+      "Don't miss out on our annual sports day on 8 August, 2025!";
+  static const String BLOG_TITLE_2 =
+      "We visited the zoo! Here's what you missed.";
+  static const String BLOG_TITLE_3 =
+      "He is Risen! We had some fun at our Easter Carols.";
   static const String READ_MORE = "Read More";
   static const String BLOGGING = "Blogging";
 
   //Footer Section
   static const String LETS_TALK = "Let's Talk!";
-  static const String PHONE_ME = "Phone Me";
-  static const String PHONE_NUMBER = "+1 800 123 456 789";
-  static const String MAIL_ME = "Mail Me";
-  static const String FOLLOW_ME_2 = "Follow Me";
-  static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
-  static const String RIGHTS_RESERVED = "© 2021 All rights reserved";
+  static const String PHONE_ME = "Call Us";
+  static const String PHONE_NUMBER = "+256 772 518615";
+  static const String MAIL_ME = "Mail Us";
+  static const String FOLLOW_ME_2 = "Pay Us a Visit";
+  static const String FOLLOW_ME_2_URL = "Tap here to navigate";
+  static const String RIGHTS_RESERVED =
+      "Nile Basin Internation School © 2020 All rights reserved";
   static const String BUILT_BY = "Built with Flutter by";
-  static const String DAVID_COBBINA = "David Cobbina";
+  static const String DAVID_COBBINA = "Sia Technologies";
   static const String DESIGNED_BY = "Designed by";
-  static const String WEB_GENIUS_LAB = "WebGeniusLab";
+  static const String WEB_GENIUS_LAB = "Cinematic256";
   static const String MADE_IN_GHANA = "Made in";
   static const String WITH_LOVE = "with";
   static const String FIND_ME = "Find me on..";
 
   //URL Links
-  static const String WEB_GENIUS_LAB_URL = "https://webgeniuslab.net/";
-  static const String BEHANCE_URL = "https://www.behance.net/";
+  static const String TIK_TOK_URL =
+      "https://www.tiktok.com/@nile_basinug?_t=ZM-8xhfe4Bi0iD&_r=1";
+  static const String YOUTUBE_URL =
+      "https://youtube.com/@nilebasininternationalschool?si=sFNQFI6R1Y5rKFYa";
   static const String DRIBBLE_URL = "https://dribbble.com/";
   static const String LINKED_IN_URL = "https:linkedin.com/in/";
-  static const String INSTAGRAM_URL = "https://www.instagram.com/";
+  static const String INSTAGRAM_URL =
+      "https://www.instagram.com/nilebasinintlsch?igsh=NjhtaGpveDg2NzU5";
   static const String GITHUB_URL = "https://github.com/";
   static const String FACEBOOK_URL = "https://facebook.com/";
-  static const String TWITTER_URL = "http://twitter.com/";
+  static const String TWITTER_URL =
+      "https://x.com/nilebasinsch?t=GF5m58sfcpLyXwkGRLPHRQ&s=09";
   static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
   static const String DESIGN_URL =
       "https://www.behance.net/gallery/95351691/Resume-Design-03";

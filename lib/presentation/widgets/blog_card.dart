@@ -86,7 +86,6 @@ class _BlogCardState extends State<BlogCard> {
             children: [
               Container(
                 margin: const EdgeInsets.only(left: Sizes.MARGIN_16),
-                
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(
                     Radius.circular(Sizes.RADIUS_16),
@@ -109,7 +108,7 @@ class _BlogCardState extends State<BlogCard> {
                               widget.imageUrl,
                               height: heightOfImage(),
                               width: widthOfImage(),
-                              fit: BoxFit.fitHeight,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
@@ -164,7 +163,7 @@ class _BlogCardState extends State<BlogCard> {
                 SpaceH8(),
                 AnimatedLineThrough(
                   text: widget.title,
-                  textStyle: widget.titleStyle ?? textTheme.headlineSmall,
+                  textStyle: widget.titleStyle ?? textTheme.labelSmall,
                 ),
                 SpaceH16(),
                 AnimatedNimbusButton(

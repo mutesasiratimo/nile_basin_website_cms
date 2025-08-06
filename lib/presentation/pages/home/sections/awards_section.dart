@@ -7,10 +7,9 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 
 class AwardsSection extends StatefulWidget {
-
   AwardsSection({Key? key});
   @override
   _AwardsSectionState createState() => _AwardsSectionState();
@@ -25,7 +24,7 @@ class _AwardsSectionState extends State<AwardsSection>
   @override
   void initState() {
     super.initState();
-  
+
     _controller = AnimationController(
       duration: const Duration(seconds: 20),
       vsync: this,
@@ -151,9 +150,7 @@ class _AwardsSectionState extends State<AwardsSection>
       body: StringConst.AWARDS_DESC,
       child: Column(
         children: [
-          _buildAwards1(),
-          SpaceH40(),
-          _buildAwards2(),
+          _buildPartnersSection(),
           SpaceH40(),
         ],
       ),
@@ -167,14 +164,7 @@ class _AwardsSectionState extends State<AwardsSection>
       hasTitle2: false,
       body: StringConst.AWARDS_DESC,
       child: Container(
-        child: Row(
-          children: [
-            _buildAwards1(),
-            Spacer(),
-            _buildAwards2(),
-            Spacer(flex: 4),
-          ],
-        ),
+        child: _buildPartnersSection(),
       ),
     );
   }
@@ -232,19 +222,19 @@ class _AwardsSectionState extends State<AwardsSection>
               AnimatedPositioned(
                 left: text1InView ? textPosition : -150,
                 child: Text(StringConst.MY, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 onEnd: (){
-                   setState(() {
-                     text2InView = true;
-                   });
-                 },
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                onEnd: () {
+                  setState(() {
+                    text2InView = true;
+                  });
+                },
+                duration: Duration(milliseconds: 750),
               ),
               AnimatedPositioned(
                 right: text2InView ? textPosition : -150,
                 child: Text(StringConst.CV, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                duration: Duration(milliseconds: 750),
               ),
             ],
           ),
@@ -253,32 +243,76 @@ class _AwardsSectionState extends State<AwardsSection>
     );
   }
 
-  Widget _buildAwards1() {
+  Widget _buildPartnersSection() {
     TextTheme textTheme = Theme.of(context).textTheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          StringConst.AWARDS_TYPE_TITLE_1,
-          style: textTheme.labelSmall,
-        ),
-        SpaceH16(),
-        ..._buildAwards(Data.awards1),
-      ],
-    );
-  }
 
-  Widget _buildAwards2() {
-    TextTheme textTheme = Theme.of(context).textTheme;
+    // List of partner images to use in the carousel
+    List<String> partnerImages = [
+      ImagePath.PARTNERS_1,
+      ImagePath.PARTNERS_2,
+      ImagePath.PARTNERS_3,
+      ImagePath.PARTNERS_4,
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          StringConst.AWARDS_TYPE_TITLE_2,
-          style: textTheme.labelMedium,
+          "Some of our partners",
+          style: textTheme.headlineSmall?.copyWith(
+            fontSize: responsiveSize(
+              context,
+              Sizes.TEXT_SIZE_20,
+              Sizes.TEXT_SIZE_24,
+            ),
+            fontWeight: FontWeight.w600,
+            color: AppColors.primaryColor,
+          ),
         ),
-        SpaceH16(),
-        ..._buildAwards(Data.awards1),
+        SpaceH24(),
+        Container(
+          height: 120,
+          child: CarouselSlider.builder(
+            itemCount: partnerImages.length,
+            itemBuilder: (context, index, realIndex) {
+              return Container(
+                width: 80,
+                height: 80,
+                margin: EdgeInsets.symmetric(horizontal: 4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    partnerImages[index],
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
+            options: CarouselOptions(
+              height: 80,
+              viewportFraction: 0.3, // Show 2 items at a time with some spacing
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 3),
+              autoPlayAnimationDuration: Duration(milliseconds: 800),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              enlargeCenterPage: false,
+              scrollDirection: Axis.horizontal,
+              padEnds: false,
+            ),
+          ),
+        ),
       ],
     );
   }

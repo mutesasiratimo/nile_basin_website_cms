@@ -55,6 +55,7 @@ class _AnimatedLineThroughState extends State<AnimatedLineThrough>
             Text(
               widget.text,
               style: widget.textStyle,
+              maxLines: 2,
             ),
             if (_isHovering)
               DefaultTextStyle(
@@ -79,7 +80,6 @@ class _AnimatedLineThroughState extends State<AnimatedLineThrough>
 
   void _mouseEnter(bool hovering) {
     if (hovering) {
-
       setState(() {
         controller.forward();
         _isHovering = hovering;

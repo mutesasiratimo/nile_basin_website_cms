@@ -49,6 +49,14 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    TextStyle? subTitleStyle = textTheme.bodyLarge?.merge(
+      Styles.customTextStyle3(
+        fontSize: 24,
+        height: 1.25,
+        fontWeight: FontWeight.w600,
+        color: AppColors.secondaryColor,
+      ),
+    );
     double headerIntroTextSize = Sizes.TEXT_SIZE_24;
     double screenWidth = widthOfScreen(context) - (sidePadding * 2);
     double contentAreaWidth = screenWidth;
@@ -164,12 +172,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle:
-                                        textTheme.headlineMedium?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: AppColors.secondaryColor,
-                                      height: 1.2,
-                                    ),
+                                    textStyle: subTitleStyle,
                                   ),
                                 ],
                                 onTap: () {},

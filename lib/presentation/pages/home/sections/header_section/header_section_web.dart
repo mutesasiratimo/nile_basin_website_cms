@@ -48,11 +48,19 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    TextStyle? subTitleStyle = textTheme.bodyLarge?.merge(
+      Styles.customTextStyle3(
+        fontSize: responsiveSize(context, 24, 36, md: 28),
+        height: 1.25,
+        fontWeight: FontWeight.w600,
+        color: AppColors.secondaryColor,
+      ),
+    );
     double headerIntroTextSize = responsiveSize(
       context,
-      Sizes.TEXT_SIZE_24,
-      Sizes.TEXT_SIZE_56,
-      md: Sizes.TEXT_SIZE_36,
+      Sizes.TEXT_SIZE_20,
+      Sizes.TEXT_SIZE_50,
+      md: Sizes.TEXT_SIZE_30,
     );
     double bodyTextSize =
         responsiveSize(context, bodyTextSizeSm, bodyTextSizeLg);
@@ -167,7 +175,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
                                     textStyle:
-                                        textTheme.headlineMedium?.copyWith(
+                                        textTheme.headlineSmall?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                     ),
@@ -186,12 +194,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle:
-                                        textTheme.headlineMedium?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: AppColors.secondaryColor,
-                                      height: 1.2,
-                                    ),
+                                    textStyle: subTitleStyle,
                                   ),
                                 ],
                                 onTap: () {},
